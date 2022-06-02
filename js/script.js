@@ -8,14 +8,28 @@
  * Check service worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
+  navigator.serviceWorker.register("/ICS2O-Unit6-04-Extra/sw.js", {
+    scope: "/ICS2O-Unit6-04-Extra/",
   })
 }
 
 /**
- * This function displays an alert.
+ * This function calculates the area for a rectangle
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+window.onload = function() {
+  const params = new URLSearchParams(document.location.search)
+
+  // input and process
+  const length = params.get('l')
+  const width = params.get('w')
+  const area = length * width
+  const dimensions = "<ul>\n<li>Length = " + length + "</li>\n<li>Width = " + width + "</li>\n</ul>"
+
+  // output
+  if ((length < 0) || (width < 0)) {
+    document.getElementById('area').innerHTML = 'Area is NaN.'
+  } else {
+    document.getElementById('dimensions').innerHTML = dimensions
+    document.getElementById('area').innerHTML = 'Area is: ' + area.toFixed(2) + ' cm³'
+  }
 }
