@@ -30,6 +30,6 @@ window.onload = function() {
     document.getElementById('area').innerHTML = 'Area is NaN.'
   } else {
     document.getElementById('dimensions').innerHTML = dimensions
-    document.getElementById('area').innerHTML = 'Area is: ' + area.toFixed(2) + ' cm³'
+    document.getElementById('area').innerHTML = 'Area is: ' + area.toFixed(2) + ' cm²'
   }
 }
